@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        
+        <title>JS variables</title>
+      
+
+    
+    </head>
+
+    <body>
+        
+        <input type="text" id="txtbox">
+        <button id="btn">Change text</button>
+        <p id="para">Change me</p>
+
+        <script type="text/javascript">
+        
+          document.getElementById("btn").onclick=function()
+          {
+            var s = document.getElementById("txtbox").value;
+            alert(s);
+            document.getElementById("para").innerHTML = s;
+          }
+          
+        </script>
+        
+    </body>
+
+</html>

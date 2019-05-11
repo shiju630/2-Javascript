@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        
+        <title>JS Arrays and If Statements</title>
+      
+
+    
+    </head>
+
+    <body>
+        
+        <input type="text" id="txtbox">
+        <button id="btn">Check Textbox Value</button>
+        <p id="para">Change me</p>
+
+        <script type="text/javascript">
+        
+          var myArray = ["sachin", "kohli", "dhoni"];
+          myArray[3]="dravid";
+          myArray.push("kumble");
+          console.log(myArray);
+          myArray.splice(1,1);
+          console.log(myArray);
+          myArray.splice(1,0,"kohli", "laxman");
+          console.log(myArray);
+          
+          document.getElementById("btn").onclick = function()
+          {
+          
+            if(myArray[0]==document.getElementById("txtbox").value)
+            document.getElementById("para").innerHTML="equal"
+            else
+            document.getElementById("para").innerHTML="not-equal"
+          
+          }
+          
+        </script>
+        
+    </body>
+
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        
+        <title>JS project reaction tester</title>
+        
+        <style>
+          
+          #shape
+          {
+            background-color: red;
+            height:100px;
+            width:100px;
+
+            
+            position:relative;
+            top:50px;
+            left:50px;
+            
+          }
+          
+          
+        </style>
+    
+    </head>
+
+    <body>
+        
+        <h4>Test Your Reactions !</h4>
+        
+        <p>click on the boxes and circles as quickly as you can !</p>
+        
+        <p><strong>Start time:</strong> <i id="startTime"></i>  </p>
+        <p><strong>End time:</strong> <i id="endTime"></i>  </p>
+         <p><strong>Execution time:</strong> <i id="exeTime"></i>  </p>
+        
+        
+        <div id="shape"></div>
+
+        <script type="text/javascript">
+
+        
+        var start
+        
+          document.getElementById("shape").onclick=function()
+          {
+                document.getElementById("shape").style.display="none"
+                start = new Date().getTime()
+                document.getElementById("startTime").innerHTML = start+"s";
+                setTimeout(myFunction, Math.random()*3000)
+          }
+           
+          function myFunction()
+          {
+          
+            //var d = new Date();
+            
+            var end = new Date().getTime();
+            
+            document.getElementById("endTime").innerHTML = end+"s";
+            document.getElementById("exeTime").innerHTML = (end-start)/1000+"s";
+            
+            document.getElementById("shape").style.backgroundColor=getRandomColor()
+            document.getElementById("shape").style.display="block"
+            
+            document.getElementById("shape").style.top=Math.round(Math.random()*200)+"px"
+            document.getElementById("shape").style.left=Math.round(Math.random()*200)+"px"
+            var htwd = Math.round(Math.random()*200) + 50
+            document.getElementById("shape").style.height=htwd+"px"
+            document.getElementById("shape").style.width=htwd+"px"
+            
+            
+            
+          }
+          
+            function getRandomColor()
+            {
+              var letters = '0123456789ABCDEF'.split('');
+              var color = '#';
+              for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+              }
+              return color;
+            }
+          
+
+          
+        </script>
+        
+    </body>
+
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        
+        <title>JS loops</title>
+      
+
+    
+    </head>
+
+    <body>
+        
+        <input type="text" id="txtbox">
+        <button id="btn">Check Textbox Value</button>
+        <p id="para"></p>
+
+        <script type="text/javascript">
+        
+          var myArray = ["sachin", "kohli", "dhoni"];
+          var para=""
+          for(var i=0;i<3;i++)
+          {
+            console.log(myArray[i])
+            para=para+ "<br>" +myArray[i]
+            document.getElementById("para").innerHTML=para
+          }
+          
+          i=0
+          while(i<myArray.length)
+          {
+            console.log(myArray[i])
+            para=para+ "<br>" +myArray[i]
+            document.getElementById("para").innerHTML=para
+            i++
+          }
+          
+          //check if the number in the textbox is equal to the random computer generated number
+          
+          alert("enter a number between from 1-5")
+          
+          
+          document.getElementById("btn").onclick=function()
+          {
+            
+            var txtBoxnum = document.getElementById("txtbox").value
+            compare(txtBoxnum)
+            
+          }
+            
+          function compare(txtnum)
+          {
+              
+              var count=1
+            
+              alert("the user entered "+txtnum)
+              randomNumber=Math.floor(Math.random()*6)
+              alert("the computer generated "+randomNumber)
+            
+              while(txtnum!=randomNumber)
+              {
+                randomNumber=Math.floor(Math.random()*6)
+                alert("the computer generated "+randomNumber)
+                count++
+              }
+            
+            console.log("number of attempts taken by the computer "+count)
+          }
+          
+          
+          
+        </script>
+        
+    </body>
+
+</html>
