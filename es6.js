@@ -47,6 +47,21 @@ let fruits = ["apples", "oranges", "grapes"];
 let vegetables = ["lettuce", ...fruits, "spinach", "raddish"];
 console.log(vegetables);
 
+//working with arrays
+const num = [-1,1,4,2,7,8,-5,3,6];
+const filtered = num.filter(value => value>=0);
+console.log(filtered);
+const sum = num.reduce((accumulator, currentValue) => accumulator + currentValue);
+console.log("sum: " + sum);
+
+
+//maps
+const m = new Map();
+m.set('a',1);
+m.set('b',2);
+console.log("map size: " + m.size);
+
+
 //classes ----------------------------------
 class Person{
     constructor(name, age){
