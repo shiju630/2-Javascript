@@ -47,7 +47,12 @@ let fruits = ["apples", "oranges", "grapes"];
 let vegetables = ["lettuce", ...fruits, "spinach", "raddish"];
 console.log(vegetables);
 
-//working with arrays
+const first = {name:"shiju"};
+const second = {age:38};
+const third = {...first, ...second, location:"NY"};
+console.log(third);
+
+//working with arrays ------------------------
 const num = [-1,1,4,2,7,8,-5,3,6];
 const filtered = num.filter(value => value>=0);
 console.log(filtered);
@@ -55,7 +60,7 @@ const sum = num.reduce((accumulator, currentValue) => accumulator + currentValue
 console.log("sum: " + sum);
 
 
-//maps
+//maps ----------------------------------------
 const m = new Map();
 m.set('a',1);
 m.set('b',2);
@@ -73,7 +78,7 @@ class Person{
         return this.age;
     }
 }
-let p1 = new Person("shiju", 38);
+const p1 = new Person("shiju", 38);
 console.log(p1.getage());
 
 //inheritance ------------------------------
@@ -90,6 +95,18 @@ class Profession extends Person{
 let p2 = new Profession("sonia", 32, "nurse");
 console.log(p2.getage());
 console.log(p2.getprofession());
+
+//Object destructuring -------------------------
+const address  = {
+    street: "park ave",
+    city: "east meadow",
+    country:"USA"
+};
+//const street = address.street;
+//const city = address.city;
+//const country = address.country;
+const {street:st,city:ci,country:co} = address;  //better way
+console.log(st);
 
 //Generators --------------------------------
 function* samplegenerator(){
